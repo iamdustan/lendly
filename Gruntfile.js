@@ -131,6 +131,16 @@ module.exports = function (grunt) {
           dest: '<%= yeoman.tmp %>',
           ext: '.html'
         }]
+      },
+      dist: {
+        options: {},
+        files: [{
+          expand: true,
+          cwd: '<%= yeoman.app %>',
+          src: '{,*/}*.jade',
+          dest: '<%= yeoman.dist %>',
+          ext: '.html'
+        }]
       }
     },
     stylus: {
