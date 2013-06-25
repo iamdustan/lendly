@@ -25,9 +25,11 @@ angular.module('lendyApp')
             name: $scope.create.borrowedTo.name,
             address: $scope.create.borrowedTo.address,
             phone: $scope.create.borrowedTo.photo
-          }
+          },
+          lendedAt: new Date()
         });
         $scope.create = emptyForm();
+
         $scope.toggleForm();
       }, Math.random() * 500);
     };

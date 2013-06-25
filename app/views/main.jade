@@ -24,16 +24,16 @@
 
 
 .list-view
-  //-h1 Current Lends
+  h1 Current Lends
   //-a.btn(href='#', ng-click='lends.removeAll()', ng-show='lends.length != 0') Remove all
 
-  ul
-    li(ng-show='lends.length == 0')
+  ul.lend-list
+    li.card(ng-show='lends.length == 0')
       div: strong You currently have no lends.
-    li(ng-repeat="lend in lends")
+    li.card(ng-repeat="lend in lends")
+      div.img
       div: strong {{lend.name}}
-      div
-        b {{ lend.borrowedTo.name }}
-        span {{ lend.borrowedTo.address }}
-      a.btn(href='#', ng-click='lends.remove($index)') &times;
+      div: b {{ lend.borrowedTo.name }}
+      span {{ lend.borrowedTo.lendedAt | date: 'MM-dd-yyyy' }}
+      a.delete(href='#', ng-click='lends.remove($index)') &times;
 
