@@ -1,26 +1,26 @@
 
 .slide-panel
-  form
-    h1 new lend
+  button.slide-handle(aria-label='Add Item', ng-click='toggleForm()'): span.slide-text &plus;
+  form.slide-content
+    h1 I am lending out...
+    div.input.input-photo
+      label.visuallyhidden(for='photo') Photo
+      input(name='photo', type='file', ng-model='create.photo')
     div.input
-      label(for='name') Name
-      input(name='name', required, ng-model='name')
+      label.visuallyhidden(for='name') Name
+      input(name='name', required, ng-model='create.name', placeholder='Name')
     div.input
-      label(for='photo') Photo
-      input(name='photo', type='file', ng-model='photo')
+      label.visuallyhidden(for='lendy') Lend to
+      input(name='lendy', required, ng-model='create.borrowedTo.name', placeholder='Lendy')
     fieldset
-      legend Lendee
+      legend.visuallyhidden Lend to contact details
       div.input
-        label(for='borrowedTo[name]') Name
-        input(name='borrowedTo[name]', required, ng-model='borrowedTo.name')
+        label.visuallyhidden(for='borrowedTo[address]') Address
+        input(name='borrowedTo[address]', ng-model='create.borrowedTo.address', placeholder='Address')
       div.input
-        label(for='borrowedTo[address]') Address
-        input(name='borrowedTo[address]', required, ng-model='borrowedTo.address')
-      div.input
-        label(for='borrowedTo[phone]') Phone
-        input(name='borrowedTo[phone]', required, ng-model='borrowedTo.phone')
-    button.btn(ng-click='addNew()', ng-disabled='form.$invalid || submitting') Add new
-    a(href='/', ng-click='cancel()') Cancel
+        label.visuallyhidden(for='borrowedTo[phone]') Phone
+        input(name='borrowedTo[phone]', ng-model='create.borrowedTo.phone', placeholder='Phone')
+    button.btn.btn-submit(ng-click='create.add()', ng-disabled='form.$invalid || submitting') Lend item
 
 
 .list-view

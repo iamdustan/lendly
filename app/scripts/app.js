@@ -7,10 +7,10 @@ angular.module('lendyApp', [])
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/add', {
-        templateUrl: 'views/add.html',
-        controller: 'AddLendCtrl'
-      })
+      //.when('/add', {
+        //templateUrl: 'views/add.html',
+        //controller: 'AddLendCtrl'
+      //})
       .otherwise({
         redirectTo: '/'
       });

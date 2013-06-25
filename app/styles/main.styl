@@ -1,5 +1,15 @@
 @import 'nib'
 
+.visuallyhidden
+  border 0
+  clip rect(0 0 0 0)
+  height 1px
+  margin -1px
+  overflow hidden
+  padding 0
+  position absolute
+  width 1px
+
 body
   background #efefef
   margin 0
@@ -11,29 +21,88 @@ body
   padding 0.416666em
   position relative
   text-align center
+  z-index 5
 
 .brand
   font-size 1.5em
 
-.navbar-btn
-  absolute top 0.333em right 0.333em
-  background #404040
-  border 1px solid #000
-  border-radius 3px
-  color #eee
-  padding 0.333em
-  text-decoration none
+h1
+  margin-top 0
+  font-size 1.5em
 
-.container
-  padding 0 10%
+// {{{ form
 
 .input
-  padding 0.333em 0
+  //padding 0.333em 0
+
+input
+  margin 0 auto
+  padding: 0.333em
+  width 90%
+
+fieldset
+  border 0
+  margin 1em 0
+  padding 0
+
 label
   display inline-block
   width 6em
   color #404040
 
+.btn-submit
+  background-color #A2BC13
+  color #fff
+  border 0
+  border-radius 5px
+  display block
+  font-size 1.5em
+  text-align center
+  text-shadow 0 0 1px darken(#A2BC13, 80%)
+  width 100%
+
+// form }}}
+// {{{ slide panel
+
+.slide-panel
+  margin-top -89%
+  /* easeOutQuad */
+  transition margin-top 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940)
+  position relative
+  box-shadow 0 2px 4px rgba(0,0,0,0.3)
+
+.slide-panel-active
+  margin-top 0%
+
+.slide-handle
+  absolute top 100% right 0.333em
+  background #404040
+  border 1px solid darken(#404040, 10%)
+  border-radius 0 0 5px 5px
+  border-top 0
+  color #eee
+  line-height 1.5em
+  width 1.5em
+  text-align center
+  vertical-align middle
+  text-decoration none
+  transition background 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940)
+
+.slide-text
+  display block
+  transition transform 1s cubic-bezier(0.250, 0.460, 0.450, 0.940)
+
+.slide-panel-active
+  .slide-handle
+    background #EE2C2C
+    border-color darken(#EE2C2C, 10%)
+  .slide-text
+    transform rotate(45deg) scale(1.5)
+
+.slide-content
+  padding 0.333em
+
+  // slide panel }}}
 
 //@media screen and (min-width 480px)
 
