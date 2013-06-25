@@ -9,13 +9,21 @@ html.no-j
     //- Place favicon.ico and apple-touch-icon.png in the root directory
     link(rel='stylesheet', href='styles/main.css')
   body(ng-app='lendyApp')
+
+    .navbar(ng-controller='NavbarController')
+      strong.brand Lendy
+      a.navbar-btn(href='#/add', ng-class="{active: routeIs('/add')}") Add
+
     .container(ng-view)
 
     script(src='components/angular/angular.js')
 
     //- build:js scripts/scripts.js
-    <script src="scripts/app.js"></script>
-    <script src="scripts/controllers/main.js"></script>
+    script(src='scripts/app.js')
+    script(src='scripts/services/lends.js')
+    script(src='scripts/controllers/main.js')
+    script(src='scripts/controllers/navbar.js')
+    script(src='scripts/controllers/addLend.js')
     //- endbuild
 
     script

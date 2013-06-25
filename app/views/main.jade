@@ -1,8 +1,39 @@
-.hero-unit
-  h1 'Allo, 'Allo!
-  p You now have
+
+.slide-panel
+  form
+    h1 new lend
+    div.input
+      label(for='name') Name
+      input(name='name', required, ng-model='name')
+    div.input
+      label(for='photo') Photo
+      input(name='photo', type='file', ng-model='photo')
+    fieldset
+      legend Lendee
+      div.input
+        label(for='borrowedTo[name]') Name
+        input(name='borrowedTo[name]', required, ng-model='borrowedTo.name')
+      div.input
+        label(for='borrowedTo[address]') Address
+        input(name='borrowedTo[address]', required, ng-model='borrowedTo.address')
+      div.input
+        label(for='borrowedTo[phone]') Phone
+        input(name='borrowedTo[phone]', required, ng-model='borrowedTo.phone')
+    button.btn(ng-click='addNew()', ng-disabled='form.$invalid || submitting') Add new
+    a(href='/', ng-click='cancel()') Cancel
+
+
+.list-view
+  //-h1 Current Lends
+  //-a.btn(href='#', ng-click='lends.removeAll()', ng-show='lends.length != 0') Remove all
+
   ul
-    li(ng-repeat="thing in awesomeThings") {{thing}}
-  p installed.
-  h3 Enjoy coding! - Yeoman
+    li(ng-show='lends.length == 0')
+      div: strong You currently have no lends.
+    li(ng-repeat="lend in lends")
+      div: strong {{lend.name}}
+      div
+        b {{ lend.borrowedTo.name }}
+        span {{ lend.borrowedTo.address }}
+      a.btn(href='#', ng-click='lends.remove($index)') &times;
 

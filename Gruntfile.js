@@ -139,6 +139,9 @@ module.exports = function (grunt) {
           paths: ['<%= yeoman.app %>/styles/'],
           use: [
             require('nib')
+          ],
+          import: [
+            '../components/normalize-css/normalize.css'
           ]
         },
         files: {
