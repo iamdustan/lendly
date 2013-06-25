@@ -1,0 +1,25 @@
+{
+  "author": {
+    "name": "Patrick Bartsch"
+  },
+  "name": "angular-gestures",
+  "description": "AngularJS directive that adds support for multi touch gestures to your app. Based on hammer.js.",
+  "version": "0.1.0",
+  "main": "gestures.min.js",
+  "scripts": [
+    "gestures.min.js"
+  ],
+  "homepage": "http://github.com/wzr1337/bower-angular-gestures",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/wzr1337/bower-angular-gestures.git"
+  },
+  "dependencies": {
+    "angular": "1.0.6",
+    "hammerjs": "1.0.5"
+  },
+  "gitHead": "9c256ceae57f0a10c7254c2080cbfc4a8d798440",
+  "readme": "# angular-gestures\n\nAngularJS directive that adds support for multi touch gestures to your app. Based on hammer.js.\n\n## Usage\n\n* Include `gestures.js` or `gestures.min.js` into your page\n* Declare `'angular-gestures'` as a dependency for your angular app: `angular.module('myApp', ['angular-gestures']);`\n* Use attributes on you containers in the same way you use `ng-click` e.g. `hm-tap=\"add_something()\"`\n* You can use angular interpolations like this : `hm-swipe=\"remove_something({{ id }})\"`\n* You can also use Hammer.js options by e.g. `hm-tap-opts=\"{hold: false}\"`\n\n## Supported events\n* hmDoubleTap : 'doubletap',\n* hmDragStart : 'dragstart',\n* hmDrag : 'drag',\n* hmDragUp : 'dragup',\n* hmDragDown : 'dragdown',\n* hmDragLeft : 'dragleft',\n* hmDragRight : 'dragright',\n* hmDragEnd : 'dragend',\n* hmHold : 'hold',\n* hmPinch : 'pinch',\n* hmPinchIn : 'pinchin',\n* hmPinchOut : 'pinchout',\n* hmRelease : 'release',\n* hmRotate : 'rotate',\n* hmSwipe : 'swipe',\n* hmSwipeUp : 'swipeup',\n* hmSwipeDown : 'swipedown',\n* hmSwipeLeft : 'swipeleft',\n* hmSwipeRight : 'swiperight',\n* hmTap : 'tap',\n* hmTouch : 'touch',\n* hmTransformStart : 'transformstart',\n* hmTransform : 'transform',\n* hmTransforEnd : 'transformend'\n",
+  "readmeFilename": "README.md",
+  "_id": "angular-gestures@0.1.0"
+}
