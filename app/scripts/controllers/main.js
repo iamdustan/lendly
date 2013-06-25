@@ -2,14 +2,27 @@
 
 angular.module('lendyApp')
   .controller('MainCtrl', function ($scope, lends, $timeout) {
-    console.log('MainCtrl', lends)
+    function emptyForm() {
+      return {
+        name: '',
+        photo: '',
+        borrowedTo: {
+          name: '',
+          address: '',
+          phone: ''
+        }
+      };
+    }
+
+    console.log('MainCtrl', lends);
     $scope.lends = lends;
     $scope.isSubmitting = false;
 
     $scope.toggleForm = function(obj, $event) {
+      console.log('toggleForm', $event);
       document.querySelector('.slide-panel').classList.toggle('slide-panel-active');
       document.querySelector('input[name="name"]').focus();
-    }
+    };
 
     $scope.create = emptyForm();
 
@@ -34,16 +47,5 @@ angular.module('lendyApp')
       }, Math.random() * 500);
     };
 
-    function emptyForm() {
-      return {
-        name: '',
-        photo: '',
-        borrowedTo: {
-          name: '',
-          address: '',
-          phone: ''
-        }
-      }
-    }
-
   });
+

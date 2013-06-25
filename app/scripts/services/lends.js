@@ -13,15 +13,15 @@ angular.module('lendyApp').factory('lends', function($rootScope) {
 
   lends.add = function(lend) {
     lends.push(lend);
-  }
+  };
 
   lends.remove = function(index) {
     lends.splice(index, 1);
-  }
+  };
 
-  lends.removeAll = function(lend) {
+  lends.removeAll = function() {
     lends = [];
-  }
+  };
 
   return lends;
 });

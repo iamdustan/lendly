@@ -8,7 +8,7 @@ angular.module('lendyApp')
       name: '',
       address: '',
       phone: ''
-    }
+    };
 
     $scope.addNew = function() {
       if ($scope.submitting) return;
@@ -30,7 +30,7 @@ angular.module('lendyApp')
 
     $scope.cancel = function() {
       console.log('cancel');
-    }
+    };
   });
 
 
